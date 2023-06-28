@@ -1,0 +1,387 @@
+/* Reset default browser styles */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation Styles */
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff5a5f;
+  padding: 15px;
+  z-index: 999;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+nav .app-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Add hover effect */
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Add active/current page style */
+nav ul li.active a {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Home Section Styles */
+#home {
+  background-image: url("/static/images/home-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  min-height: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center; /*Add this line to center the button*/
+}
+
+.home-content {
+  /* text-align: right; */
+  color: #000;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  /* text-align: right; */
+}
+
+.enquire {
+  display: inline-block;
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 20px;
+  /* font-size: 20px; */
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Add margin-top to create spacing between text and button */
+}
+
+.enquire:hover {
+  background-color: #e2474d;
+}
+
+/* Other Sections Styles */
+section {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* Add this line to center the section headings */
+}
+
+.fixed-heading {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.horizontal-scroll {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* About Section Styles */
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: table; /* Use table display for side-by-side layout */
+  width: 100%; /* Set the width of the table to 100% */
+}
+
+.about-image,
+.about-text {
+  display: table-cell; /* Display divs as table cells */
+  vertical-align: middle; /* Vertically center the content */
+  text-align: center; /* Center-align the content */
+  padding: 20px; /* Add padding for spacing */
+  width: 50%; /* Set both divs to equal width */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove any extra spacing below the image */
+  margin: 0 auto; /* Center the image horizontally within the div */
+  border-radius: 20px; /* Add border-radius to create curved borders */
+}
+
+.about-text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* whyDonate Section Styles */
+
+#whyDonate {
+  /* background-color: #f9f9f9; */
+  padding: 50px 20px;
+}
+
+.why-donate-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: center; /* Center vertically */
+}
+
+.why-donate-image {
+  flex-basis: 50%; /* Set the width to 50% for the image */
+}
+
+.why-donate-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.why-donate-text {
+  flex-basis: 50%; /* Set the width to 50% for the text */
+  padding-left: 40px; /* Add left padding for spacing */
+  text-align: center; /* Align the text to the left */
+}
+
+.why-donate-text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.why-donate-text p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Gallery Section Styles */
+
+#gallery {
+  /* background-color: #f9f9f9; */
+  padding: 50px 20px;
+  margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
+}
+
+#gallery h2 {
+  margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+.image-gallery {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: inline-block;
+  width: 400px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  margin-right: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Videos Section Styles */
+
+#videos {
+  padding: 50px 20px;
+}
+
+#videos h2 {
+  margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+.video-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px; /* Add a gap between the videos */
+}
+
+.video-container {
+  flex: 0 0 50%;
+  max-width: 42%;
+  height: 350px;
+  border-radius: 20px; /* Apply border radius */
+  overflow: hidden; /* Add overflow hidden to hide any content exceeding the container */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contact Us Section Styles */
+
+#contact {
+  padding: 40px;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 60px; /* Adjust the margin as needed */
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.map-container {
+  flex: 3;
+  padding-right: 0; /* Remove the right padding */
+  padding-left: 20px; /* Add left padding */
+  height: 400px; /* Adjust the height as desired */
+  width: 70%; /* Adjust the width as desired */
+  display: flex;
+  justify-content: flex-end; /* Align map to the right */
+  align-items: center;
+}
+
+
+.contact-info-container {
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.contact-info-container .info-row {
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  margin-bottom: 20px; /* Increase the margin-bottom value as desired */
+}
+
+.contact-info-container .info-row .icon {
+  margin-right: 10px;
+}
+
+.contact-info-container .info-row .icon i {
+  font-size: 36px; /* Increased icon size */
+  color: #ff5a5f; /* Icon color (replace with your desired color) */
+}
+
+.contact-info-container .info-row .info {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 10px; /* Adjust the margin as desired */
+}
+
+.contact-info-container .info-row h3 {
+  margin-bottom: 5px;
+}
+
+.contact-info-container .info-row p {
+  margin-bottom: 0;
+  color: #565252; /* Paragraph text color */
+}
+
+.contact-info-container .info-row a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-color .contact-info-container .info-row .icon i {
+  color: #ff5a5f; /* Icon color same as the navbar color */
+}
