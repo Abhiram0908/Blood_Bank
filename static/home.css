@@ -460,3 +460,142 @@ footer {
   color: #ff5a5f; /* Icon color same as the navbar color */
 }
 
+
+/* Media Queries */
+@media (max-width: 767px) {
+  /* Reset fixed positioning for navigation */
+  nav {
+    position: static; /* Changed from fixed */
+  }
+
+  nav ul {
+    flex-direction: row; /* Changed from column */
+    align-items: center; /* Added */
+  }
+
+  nav ul li {
+    margin-right: 10px; /* Reset back to margin-right */
+    margin-bottom: 0; /* Reset back to 0 */
+  }
+
+  nav .navbar-content {
+    flex-direction: row; /* Changed from column */
+    align-items: center; /* Added */
+  }
+}
+
+
+/* Media Query for Responsive Contact Us Section */
+@media (max-width: 767px) {
+  .contact-container {
+    flex-direction: column; /* Stack divs in a column */
+  }
+
+  .map-container {
+    width: 100%; /* Full width for the map */
+    padding: 0; /* Remove padding */
+    justify-content: center; /* Center align the map */
+  }
+
+  .contact-info-container {
+    width: 100%; /* Full width for the contact info */
+    padding: 0; /* Remove padding */
+  }
+}
+
+/* Media Query for Responsive Services Section */
+@media (max-width: 767px) {
+  .services-container {
+    flex-wrap: wrap; /* Allow services to wrap in a column */
+  }
+
+  .service {
+    flex-basis: 100%; /* Set full width for services in mobile view */
+    max-width: none; /* Remove the maximum width */
+  }
+}
+
+
+@media (max-width: 767px) {
+  .about-content {
+    display: block; /* Change to block display */
+    width: auto; /* Reset width */
+  }
+
+  .about-image,
+  .about-text {
+    display: block; /* Change to block display */
+    width: 100%; /* Set width to 100% */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center-align the content */
+  }
+
+  .about-image img {
+    max-width: 80%; /* Adjust the image size as desired */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 20px; /* Add border-radius to create curved borders */
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  /* Apply the gallery styles for mobile devices */
+  .image-gallery {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block; /* Display the gallery for mobile devices */
+  }
+
+  .image-container {
+    display: inline-block;
+    width: 100%; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    margin-right: 10px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-container::after {
+    content: "Swipe for more"; /* Add the text content */
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+  }
+}
+
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .why-donate-content {
+    flex-direction: column; /* Display the content in a column form */
+  }
+
+  .why-donate-image,
+  .why-donate-text {
+    flex-basis: 100%; /* Set the width to 100% for both image and text */
+    padding-left: 0; /* Remove the left padding */
+    text-align: center; /* Center-align the text */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .video-row {
+    flex-wrap: wrap; /* Display videos in a column format */
+    justify-content: center; /* Center-align the videos */
+  }
+
+  .video-container {
+    flex-basis: 100%; /* Set the width to 100% for the video container */
+    max-width: 100%; /* Remove the maximum width restriction */
+    height: auto; /* Adjust the height automatically based on content */
+  }
+}
