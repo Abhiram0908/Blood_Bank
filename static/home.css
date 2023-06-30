@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim:wght@400;600&display=swap");
+
 /* Reset default browser styles */
 html,
 body,
@@ -16,7 +19,7 @@ li {
 
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -371,13 +374,12 @@ footer {
 }
 
 .service:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Apply box shadow on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.425); /* Apply box shadow on hover */
 }
 
 .service a.enquire:hover {
   background-color: #e04649;
 }
-
 
 /* Contact Us Section Styles */
 
@@ -460,9 +462,6 @@ footer {
   color: #ff5a5f; /* Icon color same as the navbar color */
 }
 
-
-
-
 /* Scroll to top CSS */
 
 #scroll-to-top {
@@ -486,17 +485,6 @@ footer {
   opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* Media Queries */
 @media (max-width: 767px) {
   /* Reset fixed positioning for navigation */
@@ -519,7 +507,6 @@ footer {
     align-items: center; /* Added */
   }
 }
-
 
 /* Media Query for Responsive Contact Us Section */
 @media (max-width: 767px) {
@@ -551,7 +538,6 @@ footer {
   }
 }
 
-
 @media (max-width: 767px) {
   .about-content {
     display: block; /* Change to block display */
@@ -572,7 +558,6 @@ footer {
     border-radius: 20px; /* Add border-radius to create curved borders */
   }
 }
-
 
 @media only screen and (max-width: 767px) {
   /* Apply the gallery styles for mobile devices */
@@ -606,7 +591,6 @@ footer {
     color: #888;
   }
 }
-
 
 /* Media query for mobile devices */
 @media (max-width: 767px) {
