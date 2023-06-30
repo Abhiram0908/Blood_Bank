@@ -26,7 +26,6 @@ body {
 }
 
 /* Navigation Styles */
-/* Navigation Styles */
 nav {
   position: fixed;
   top: 0;
@@ -309,6 +308,77 @@ footer {
   border: none;
 }
 
+/* Services Section Styles */
+
+#services {
+  padding: 50px 20px;
+}
+
+#services h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+}
+
+.service {
+  flex-basis: 25%; /* Set the width of each service div */
+  max-width: 250px; /* Limit the maximum width */
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service img {
+  width: 100%;
+  height: 150px; /* Set the fixed height of the image */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
+  height: 120px; /* Set the fixed height of the paragraph */
+  overflow: hidden;
+}
+
+.service a.enquire {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.service:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Apply box shadow on hover */
+}
+
+.service a.enquire:hover {
+  background-color: #e04649;
+}
+
+
 /* Contact Us Section Styles */
 
 #contact {
@@ -335,7 +405,6 @@ footer {
   justify-content: flex-end; /* Align map to the right */
   align-items: center;
 }
-
 
 .contact-info-container {
   flex: 30%;
@@ -382,6 +451,12 @@ footer {
   color: #333;
 }
 
+.contact-info-container .info-row a p {
+  margin-bottom: 0;
+  color: #565252; /* Paragraph text color */
+}
+
 .navbar-color .contact-info-container .info-row .icon i {
   color: #ff5a5f; /* Icon color same as the navbar color */
 }
+
