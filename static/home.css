@@ -99,7 +99,7 @@ nav ul li.active a {
 }
 
 .home-content {
-  /* text-align: right; */
+  /* text-align: center; */
   color: #000;
   max-width: 600px;
   margin: 0 auto;
@@ -108,7 +108,7 @@ nav ul li.active a {
 .home-content h2 {
   font-size: 40px;
   margin-bottom: 20px;
-  /* text-align: right; */
+  /* text-align: center; */
 }
 
 .enquire {
@@ -359,7 +359,7 @@ footer {
 }
 
 .service a.enquire {
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   background-color: #ff5a5f;
@@ -459,6 +459,42 @@ footer {
 .navbar-color .contact-info-container .info-row .icon i {
   color: #ff5a5f; /* Icon color same as the navbar color */
 }
+
+
+
+
+/* Scroll to top CSS */
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5a5f;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  z-index: 999;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-to-top:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* Media Queries */
@@ -597,5 +633,12 @@ footer {
     flex-basis: 100%; /* Set the width to 100% for the video container */
     max-width: 100%; /* Remove the maximum width restriction */
     height: auto; /* Adjust the height automatically based on content */
+  }
+}
+
+/* CSS styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  #scroll-to-top {
+    display: none; /* Hide the button in mobile view */
   }
 }
