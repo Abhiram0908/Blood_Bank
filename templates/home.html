@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
 
   <div class="topnav">
@@ -28,12 +29,31 @@
     <a href="#contact">Contact Us</a>
   </div>
 
-
   <!-- Home Section -->
   <section id="home">
+
+    <div class="flash-container">
+      {% with messages = get_flashed_messages(with_categories = true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <ul class="flash-messages">
+        {% for message in messages %}
+        {% if category == 'danger' %}
+        <li class="flash-message danger">{{ message }}</li>
+        {% else %}
+        <li class="flash-message success">{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+
+
     <div class="home-content">
       <h2>Prompt and Economical Blood Donation</h2>
-      <a href="#" class="enquire">Enquire Now</a>
+      <a href="{{url_for('login')}}" class="enquire">Register Now</a>
     </div>
   </section>
 

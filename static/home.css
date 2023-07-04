@@ -28,6 +28,44 @@ body {
   padding: 20px;
 }
 
+
+.flash-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.flash-messages {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flash-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.flash-message.success {
+  background-color: #c2e0c6;
+  color: #145214;
+}
+.flash-message.error {
+  background-color: #e6b3b3;
+  color: #8c0e0e;
+}
+
+.flash-message.danger {
+  background-color: #e6b3b3;
+  color: #8c0e0e;
+}
+
+
+
 /* Nav bar */
 
 .topnav {

@@ -1,0 +1,149 @@
+/* Styles for the login form */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim:wght@400;600&display=swap");
+
+/* Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff5a5f;
+    margin-top: 0;
+}
+
+.form-wrapper {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="submit"] {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.remember-checkbox {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link input[type="submit"] {
+    background-color: transparent;
+    color: #ff5a5f;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e2474d;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.flash-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flash-messages {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flash-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.flash-message.success {
+    background-color: #c2e0c6;
+    color: #145214;
+}
+
+.flash-message.error {
+    background-color: #e6b3b3;
+    color: #8c0e0e;
+  }
+
+.flash-message.danger {
+    background-color: #e6b3b3;
+    color: #8c0e0e;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .login-link {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
