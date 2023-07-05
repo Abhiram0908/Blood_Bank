@@ -8,15 +8,63 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="profile">
-            <!-- <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture"> -->
-            <h1 class="username">{{ current_user.username }}</h1>
-            <a href="{{url_for('home')}}" class="enquire">Back</a>
-            <!-- <p class="email">john.doe@example.com</p> -->
-        </div>
-    </div>
 
+    <div class="container">
+        <h1 class="heading">Account Holder Details</h1>
+        <div class="flash-container">
+            {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                {% if category == 'danger' %}
+                <li class="flash-message danger">{{ message }}</li>
+                {% else %}
+                <li class="flash-message success">{{ message }}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="profile">
+                    <div class="profile-pic">
+                        <img src="{{ image_file }}">
+                    </div>
+                    <div class="info">
+                        <p class="username">Username: {{ current_user.username }}</p>
+                        <p class="email">Email: {{ current_user.email }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container">
+                <form method="POST" action="{{ url_for('account') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <label for="username">Username:</label><br>
+                        {{ form.username(size=30) }}<br>
+                        {% for error in form.username.errors %}
+                        <span class="error-message">{{ error }}</span><br>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label><br>
+                        {{ form.email(size=30) }}<br>
+                        {% for error in form.email.errors %}
+                        <span class="error-message">{{ error }}</span><br>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit() }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="{{ url_for('home') }}" class="enquire">Back</a>
+    </div>
 </body>
 
 </html>
