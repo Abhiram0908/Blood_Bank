@@ -51,7 +51,7 @@
 
 
     <div class="home-content">
-      <h2>Prompt and Economical Blood Donation</h2>
+      <h2>Join the Life-Saving Mission, Donate Blood</h2>
       {% if current_user.is_authenticated %}
       <a href="{{url_for('account')}}" class="enquire">My Account</a>
       <a href="{{url_for('logout')}}" class="enquire">Logout</a>
@@ -105,12 +105,12 @@
     <div class="about-content">
       <div class="about-text">
         <h2>About Us</h2>
-        <p>Welcome to Safe Life Blood Bank, located in Hyderabad, Telangana. Our primary objective is to deliver
-          efficient, cost-effective, and trustworthy blood bank services, ensuring the provision of the safest blood and
-          various blood products such as RBCs and platelets. Equipped with cutting-edge technology and a well-stocked
-          inventory, we strive to meet the diverse blood requirements of patients and numerous hospitals. Our unwavering
-          commitment to this cause has allowed us to play a significant role in saving countless lives during critical
-          situations and emergencies.</p>
+        <p>Welcome to Safe Life Blood Bank, located in Hyderabad, Telangana. We adhere to the Drug and Cosmetic Act as
+          well as national blood policy requirements and recommendations. We emphasize appropriate blood donation and
+          collection procedures, efficient administration, and rigorous oversight of the quantity and quality of donated
+          blood. Safe Life Blood Bank has been designed with a modular and scalable architecture to ensure widespread
+          application. Our easily customizable and adaptable rule-based architecture can be tailored to meet the unique
+          needs of stakeholders from all over the nation.</p>
       </div>
       <div class="about-image">
         <img src="/static/images/about-image.jpg" alt="About Us Image">
@@ -150,14 +150,58 @@
   </section>
 
 
-  <!-- whyDonate Section -->
   <section id="whyDonate">
+    <h2>Learn About Donation</h2>
     <div class="why-donate-content">
-      <div class="why-donate-image">
-        <img src="/static/images/why-donate-image.png" alt="Why Donate Blood Image">
-      </div>
+      <table class="why-donate-table">
+        <tr>
+          <th>Blood Type</th>
+          <th>Donate Blood To</th>
+          <th>Receive Blood From</th>
+        </tr>
+        <tr>
+          <td>A+</td>
+          <td>A+, AB+</td>
+          <td>A+, A-, O+, O-</td>
+        </tr>
+        <tr>
+          <td>A-</td>
+          <td>A+, A-, AB+, AB-</td>
+          <td>A-, O-</td>
+        </tr>
+        <tr>
+          <td>B+</td>
+          <td>B+, AB+</td>
+          <td>B+, B-, O+, O-</td>
+        </tr>
+        <tr>
+          <td>B-</td>
+          <td>B+, B-, AB+, AB-</td>
+          <td>B-, O-</td>
+        </tr>
+        <tr>
+          <td>AB+</td>
+          <td>AB+</td>
+          <td>All Blood Types</td>
+        </tr>
+        <tr>
+          <td>AB-</td>
+          <td>AB+, AB-</td>
+          <td>A-, B-, AB-, O-</td>
+        </tr>
+        <tr>
+          <td>O+</td>
+          <td>All Blood Types</td>
+          <td>O+, O-</td>
+        </tr>
+        <tr>
+          <td>O-</td>
+          <td>All Blood Types</td>
+          <td>O-</td>
+        </tr>
+      </table>
       <div class="why-donate-text">
-        <h2>Why Donate Blood ?</h2>
+        <h2>Why Donate Blood?</h2>
         <p>Everyday, there are many emergency cases or other treatments that require blood. But unfortunately, the
           requirement of blood is exponentially more than its supply. This, at times, leads to loss of life. An act of
           kindness and a selfless service of donating blood can make a big difference and save and prolong someone's
@@ -166,6 +210,7 @@
       </div>
     </div>
   </section>
+
 
 
   <!-- Videos Section -->

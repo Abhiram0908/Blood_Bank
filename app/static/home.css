@@ -214,7 +214,7 @@ footer {
 
 #whyDonate {
   /* background-color: #f9f9f9; */
-  padding: 50px 20px;
+  padding: 20px 20px 50px;
 }
 
 .why-donate-content {
@@ -222,6 +222,7 @@ footer {
   margin: 0 auto;
   display: flex; /* Use flexbox for side-by-side layout */
   align-items: center; /* Center vertically */
+  height: 400px; /* Adjust the height as needed */
 }
 
 .why-donate-image {
@@ -233,6 +234,26 @@ footer {
   height: auto;
   display: block;
   border-radius: 10px;
+}
+
+.why-donate-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  outline: 2px solid #ff5a5f;
+}
+
+.why-donate-table th,
+.why-donate-table td {
+  padding: 10px;
+  border: none;
+  outline: 1px solid #ff5a5f;
+}
+
+.why-donate-table th {
+  background-color: #ff5a5f;
+  color: #fff;
 }
 
 .why-donate-text {
@@ -252,13 +273,32 @@ footer {
   color: #333;
 }
 
+@media screen and (max-width: 768px) {
+  .why-donate-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .why-donate-image,
+  .why-donate-text {
+    flex-basis: 100%;
+  }
+
+  .why-donate-text h2 {
+    margin-top: 20px; /* Add the desired margin value */
+  }
+}
+
+
+
 /* Gallery Section Styles */
 
 #gallery {
   /* background-color: #f9f9f9; */
-  padding: 50px 20px;
+  padding: 20px 20px 50px; /* Adjust the padding as needed */
   margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
 }
+
 
 #gallery h2 {
   margin-bottom: 40px; /* Adjust the margin as needed */
@@ -319,7 +359,7 @@ footer {
 /* Services Section Styles */
 
 #services {
-  padding: 50px 20px;
+  padding: 20px 20px 50px;
 }
 
 #services h2 {
