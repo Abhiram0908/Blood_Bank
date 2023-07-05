@@ -41,21 +41,30 @@
                 </div>
             </div>
             <div class="form-container">
-                <form method="POST" action="{{ url_for('account') }}">
+                <form method="POST" action="{{ url_for('account') }}" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}
                     <div class="form-group">
-                        <label for="username">Username:</label><br>
+                        <label for="username">Username</label><br>
                         {{ form.username(size=30) }}<br>
                         {% for error in form.username.errors %}
                         <span class="error-message">{{ error }}</span><br>
                         {% endfor %}
                     </div>
                     <div class="form-group">
-                        <label for="email">Email:</label><br>
+                        <label for="email">Email</label><br>
                         {{ form.email(size=30) }}<br>
                         {% for error in form.email.errors %}
                         <span class="error-message">{{ error }}</span><br>
                         {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.picture.label() }}
+                        {{ form.picture(class = "form-control-file") }}
+                        {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                        <br><span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                        {% endif %}
                     </div>
                     <div class="form-group">
                         {{ form.submit() }}

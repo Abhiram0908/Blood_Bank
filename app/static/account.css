@@ -143,6 +143,11 @@ form input[type="email"] {
   background-color: #e2474d;
 }
 
+.form-group span.text-danger {
+  color: red;
+  font-size: 14px; /* Adjust the font size as per your preference */
+}
+
 input[type="submit"] {
     background-color: #ff5a5f;
     color: white;
@@ -155,10 +160,11 @@ input[type="submit"] {
 
 
 /* Responsive Styles */
+
 @media (max-width: 600px) {
   .wrapper {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .box,
