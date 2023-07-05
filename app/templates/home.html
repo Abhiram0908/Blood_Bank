@@ -25,7 +25,6 @@
     <a href="#gallery">Gallery</a>
     <a href="#whyDonate">Why Donate Blood</a>
     <a href="#videos">Videos</a>
-    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact Us</a>
   </div>
 
@@ -53,7 +52,13 @@
 
     <div class="home-content">
       <h2>Prompt and Economical Blood Donation</h2>
-      <a href="{{url_for('login')}}" class="enquire">Register Now</a>
+      {% if current_user.is_authenticated %}
+      <a href="{{url_for('account')}}" class="enquire">My Account</a>
+      <a href="{{url_for('logout')}}" class="enquire">Logout</a>
+      {% else %}
+      <a href="{{url_for('register')}}" class="enquire">Register Now</a>
+      <a href="{{url_for('login')}}" class="enquire">Login</a>
+      {% endif %}
     </div>
   </section>
 

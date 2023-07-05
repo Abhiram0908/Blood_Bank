@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Account Holder Details</title>
+    <link rel="stylesheet" href="/static/account.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile">
+            <!-- <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture"> -->
+            <h1 class="username">{{ current_user.username }}</h1>
+            <a href="{{url_for('home')}}" class="enquire">Back</a>
+            <!-- <p class="email">john.doe@example.com</p> -->
+        </div>
+    </div>
+
+</body>
+
+</html>
