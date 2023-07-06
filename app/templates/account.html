@@ -8,10 +8,22 @@
 </head>
 
 <body>
+    <!-- Navigation -->
+
+    <div class="topnav">
+        <a href="{{ url_for('home') }}#home">Home</a>
+        <a href="{{ url_for('home') }}#services">Services</a>
+        <a href="{{ url_for('home') }}#about">About Us</a>
+        <a href="{{ url_for('home') }}#gallery">Gallery</a>
+        <a href="{{ url_for('home') }}#whyDonate">Why Donate Blood</a>
+        <a href="{{ url_for('home') }}#videos">Videos</a>
+        <a href="{{ url_for('home') }}#contact">Contact Us</a>
+    </div>
+
 
     <div class="container">
-        <h1 class="heading">Account Holder Details</h1>
         <div class="flash-container">
+            <h1 class="heading">Account Holder Details</h1>
             {% with messages = get_flashed_messages(with_categories = true) %}
             {% if messages %}
             {% for category, message in messages %}
@@ -72,7 +84,6 @@
                 </form>
             </div>
         </div>
-        <a href="{{ url_for('home') }}" class="enquire">Back</a>
     </div>
 </body>
 

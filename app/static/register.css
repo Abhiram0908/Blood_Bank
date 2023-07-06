@@ -12,6 +12,33 @@ body {
     padding: 0;
 }
 
+/* Nav bar */
+
+.topnav {
+    background-color: #ff5a5f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -21,7 +48,7 @@ body {
 h1 {
     text-align: center;
     color: #ff5a5f;
-    margin-top: 0;
+    margin-top: 50px; /* Add margin-top to adjust the position */
 }
 
 .form-wrapper {

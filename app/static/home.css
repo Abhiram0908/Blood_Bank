@@ -114,9 +114,8 @@ body {
 }
 
 .home-content h2 {
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 20px;
-  /* text-align: center; */
 }
 
 .enquire {
@@ -187,7 +186,7 @@ footer {
   vertical-align: middle; /* Vertically center the content */
   text-align: center; /* Center-align the content */
   padding: 20px; /* Add padding for spacing */
-  width: 50%; /* Set both divs to equal width */
+  width: 55%; /* Set both divs to equal width */
   box-sizing: border-box; /* Include padding in the width calculation */
 }
 
@@ -257,7 +256,7 @@ footer {
 }
 
 .why-donate-text {
-  flex-basis: 50%; /* Set the width to 50% for the text */
+  flex-basis: 80%; 
   padding-left: 40px; /* Add left padding for spacing */
   text-align: center; /* Align the text to the left */
 }
