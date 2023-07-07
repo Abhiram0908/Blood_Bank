@@ -1,8 +1,23 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms import (
+    StringField,
+    PasswordField,
+    SubmitField,
+    BooleanField,
+    DateField,
+    SelectField,
+    IntegerField,
+)
+from wtforms.validators import (
+    DataRequired,
+    Length,
+    Email,
+    EqualTo,
+    ValidationError,
+    Regexp,
+)
 from app.models import User
 
 
@@ -44,11 +59,13 @@ class UpdateAccountForm(FlaskForm):
         "Username", validators=[DataRequired(), Length(min=2, max=30)]
     )
     email = StringField("Email", validators=[DataRequired(), Email()])
-    
-    picture = FileField("Update Profile Picture", validators=[FileAllowed(['jpg', 'png'])])
+
+    picture = FileField(
+        "Update Profile Picture", validators=[FileAllowed(["jpg", "png"])]
+    )
     submit = SubmitField("Update")
 
-    #perform validation only when entered username and email are different
+    # perform validation only when entered username and email are different
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
@@ -61,4 +78,55 @@ class UpdateAccountForm(FlaskForm):
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
-                raise ValidationError("That email is taken. Please choose a different one.")
+                raise ValidationError(
+                    "That email is taken. Please choose a different one."
+                )
+
+
+class RegisterAsDonorForm(FlaskForm):
+    DonorName = StringField("Donor Full Name", validators=[DataRequired()])
+    DateOfBirth = DateField(
+        "Date of Birth", validators=[DataRequired()], format="%Y-%m-%d"
+    )
+    BloodType = SelectField(
+        "Blood Type",
+        choices=[
+            ("", "Select Blood Type"),
+            ("A+", "A+"),
+            ("A-", "A-"),
+            ("B+", "B+"),
+            ("B-", "B-"),
+            ("AB+", "AB+"),
+            ("AB-", "AB-"),
+            ("O+", "O+"),
+            ("O-", "O-"),
+        ],
+    )
+    LastDonateDate = DateField(
+        "Last Donate Date", validators=[DataRequired()], format="%Y-%m-%d"
+    )
+    PhoneNumber = StringField(
+        "Phone Number",
+        validators=[
+            DataRequired(),
+            Length(min=10, max=15),
+            Regexp(
+                r"^\+?[0-9]+$",
+                message="Invalid phone number format. Only digits and '+' are allowed.",
+            ),
+        ],
+    )
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    StreetAddress = StringField("Street Address", validators=[DataRequired()])
+    City = StringField("City", validators=[DataRequired()])
+    State = StringField("State / Province", validators=[DataRequired()])
+    country_code = StringField("PinCode", validators=[DataRequired()])
+    Country = StringField("Country", validators=[DataRequired()])
+    AgreeToTerms = BooleanField(
+        "I agree to the terms and conditions",
+        validators=[
+            DataRequired(message="You must agree to the terms and conditions.")
+        ],
+        description="By checking this box, I acknowledge that my information will be recorded and may be shared with individuals in need of blood. In case of an emergency, either we or they may contact me for assistance.",
+    )
+    Submit = SubmitField("Register")

@@ -1,7 +1,7 @@
 import secrets, os
 from flask import render_template, url_for, flash, redirect, request
 from app import app, db, bcrypt
-from app.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from app.forms import RegistrationForm, LoginForm, UpdateAccountForm, RegisterAsDonorForm
 from app.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -86,3 +86,8 @@ def account():
     return render_template(
         "account.html", title="Account", image_file=image_file, form=form
     )
+
+@app.route("/donor_register", methods=["GET", "POST"])
+def donor_register():
+    form = RegisterAsDonorForm()
+    return render_template('donor_register.html', title = 'RegisterDonar', form=form)
