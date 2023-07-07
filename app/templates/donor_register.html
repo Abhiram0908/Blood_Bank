@@ -48,65 +48,76 @@
 
                 <h2>Personal Details</h2>
                 <div class="form-group">
-                    <h3>{{ form.DonorName.label }}</h3>
+                    <h3>{{ form.DonorName.label }}{% if form.DonorName.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.DonorName() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.DateOfBirth.label }}</h3>
+                    <h3>{{ form.DateOfBirth.label }}{% if form.DateOfBirth.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.DateOfBirth() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.BloodType.label }}</h3>
+                    <h3>{{ form.BloodType.label }}{% if form.BloodType.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.BloodType() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.LastDonateDate.label }}</h3>
+                    <h3>{{ form.LastDonateDate.label }}{% if form.LastDonateDate.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.LastDonateDate() }}
                 </div>
 
                 <h2>Contact</h2>
                 <div class="form-group">
-                    <h3>{{ form.PhoneNumber.label }}</h3>
+                    <h3>{{ form.PhoneNumber.label }}{% if form.PhoneNumber.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.PhoneNumber() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.email.label }}</h3>
+                    <h3>{{ form.email.label }}{% if form.email.flags.required %}<span class="required-field">*</span>{%
+                        endif %}</h3>
                     {{ form.email() }}
                 </div>
 
                 <h2>Address</h2>
                 <div class="form-group">
-                    <h3>{{ form.StreetAddress.label }}</h3>
+                    <h3>{{ form.StreetAddress.label }}{% if form.StreetAddress.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.StreetAddress() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.City.label }}</h3>
+                    <h3>{{ form.City.label }}{% if form.City.flags.required %}<span class="required-field">*</span>{%
+                        endif %}</h3>
                     {{ form.City() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.State.label }}</h3>
+                    <h3>{{ form.State.label }}{% if form.State.flags.required %}<span class="required-field">*</span>{%
+                        endif %}</h3>
                     {{ form.State() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.country_code.label }}</h3>
+                    <h3>{{ form.country_code.label }}{% if form.country_code.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.country_code() }}
                 </div>
 
                 <div class="form-group">
-                    <h3>{{ form.Country.label }}</h3>
+                    <h3>{{ form.Country.label }}{% if form.Country.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</h3>
                     {{ form.Country() }}
                 </div>
 
-
                 <div class="form-field dropdown">
-                    {{ form.AgreeToTerms.label }} {{ form.AgreeToTerms() }}
+                    {{ form.AgreeToTerms.label }}{% if form.AgreeToTerms.flags.required %}<span
+                        class="required-field">*</span>{% endif %} {{ form.AgreeToTerms() }}
                     <span class="dropdown-content">{{ form.AgreeToTerms.description }}</span>
                 </div>
 
@@ -115,6 +126,7 @@
                         {{ form.Submit() }}
                     </div>
                 </div>
+
 
             </form>
         </div>

@@ -84,6 +84,48 @@ class UpdateAccountForm(FlaskForm):
 
 
 class RegisterAsDonorForm(FlaskForm):
+    states = [
+        ("", "Select State"),
+        ("Andhra Pradesh", "Andhra Pradesh"),
+        ("Arunachal Pradesh", "Arunachal Pradesh"),
+        ("Assam", "Assam"),
+        ("Bihar", "Bihar"),
+        ("Chhattisgarh", "Chhattisgarh"),
+        ("Goa", "Goa"),
+        ("Gujarat", "Gujarat"),
+        ("Haryana", "Haryana"),
+        ("Himachal Pradesh", "Himachal Pradesh"),
+        ("Jharkhand", "Jharkhand"),
+        ("Karnataka", "Karnataka"),
+        ("Kerala", "Kerala"),
+        ("Madhya Pradesh", "Madhya Pradesh"),
+        ("Maharashtra", "Maharashtra"),
+        ("Manipur", "Manipur"),
+        ("Meghalaya", "Meghalaya"),
+        ("Mizoram", "Mizoram"),
+        ("Nagaland", "Nagaland"),
+        ("Odisha", "Odisha"),
+        ("Punjab", "Punjab"),
+        ("Rajasthan", "Rajasthan"),
+        ("Sikkim", "Sikkim"),
+        ("Tamil Nadu", "Tamil Nadu"),
+        ("Telangana", "Telangana"),
+        ("Tripura", "Tripura"),
+        ("Uttar Pradesh", "Uttar Pradesh"),
+        ("Uttarakhand", "Uttarakhand"),
+        ("West Bengal", "West Bengal"),
+        ("Andaman and Nicobar Islands", "Andaman and Nicobar Islands"),
+        ("Chandigarh", "Chandigarh"),
+        (
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Dadra and Nagar Haveli and Daman and Diu",
+        ),
+        ("Delhi", "Delhi"),
+        ("Ladakh", "Ladakh"),
+        ("Lakshadweep", "Lakshadweep"),
+        ("Puducherry", "Puducherry"),
+    ]
+
     DonorName = StringField("Donor Full Name", validators=[DataRequired()])
     DateOfBirth = DateField(
         "Date of Birth", validators=[DataRequired()], format="%Y-%m-%d"
@@ -118,10 +160,10 @@ class RegisterAsDonorForm(FlaskForm):
     )
     email = StringField("Email", validators=[DataRequired(), Email()])
     StreetAddress = StringField("Street Address", validators=[DataRequired()])
-    City = StringField("City", validators=[DataRequired()])
-    State = StringField("State / Province", validators=[DataRequired()])
+    City = StringField("City ", validators=[DataRequired()])
+    State = SelectField("State / Province", choices=states, validators=[DataRequired()])
     country_code = StringField("PinCode", validators=[DataRequired()])
-    Country = StringField("Country", validators=[DataRequired()])
+    Country = SelectField("Country", choices=[('India', 'India')], validators=[DataRequired()])
     AgreeToTerms = BooleanField(
         "I agree to the terms and conditions",
         validators=[

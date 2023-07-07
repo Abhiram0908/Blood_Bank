@@ -115,6 +115,11 @@ input[type="submit"] {
     margin-right: 5px;
 }
 
+.required-field {
+  color: red;
+}
+
+
 .login-link {
     text-align: center;
     margin-top: 20px;
