@@ -1,3 +1,4 @@
+from datetime import date
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
@@ -16,7 +17,7 @@ from wtforms.validators import (
     Email,
     EqualTo,
     ValidationError,
-    Regexp,
+    Regexp
 )
 from app.models import User
 
@@ -162,8 +163,10 @@ class RegisterAsDonorForm(FlaskForm):
     StreetAddress = StringField("Street Address", validators=[DataRequired()])
     City = StringField("City ", validators=[DataRequired()])
     State = SelectField("State / Province", choices=states, validators=[DataRequired()])
-    country_code = StringField("PinCode", validators=[DataRequired()])
-    Country = SelectField("Country", choices=[('India', 'India')], validators=[DataRequired()])
+    pin_code = StringField("PinCode", validators=[DataRequired()])
+    Country = SelectField(
+        "Country", choices=[("India", "India")], validators=[DataRequired()]
+    )
     AgreeToTerms = BooleanField(
         "I agree to the terms and conditions",
         validators=[
@@ -172,3 +175,14 @@ class RegisterAsDonorForm(FlaskForm):
         description="By checking this box, I acknowledge that my information will be recorded and may be shared with individuals in need of blood. In case of an emergency, either we or they may contact me for assistance.",
     )
     Submit = SubmitField("Register")
+
+    def validate_DateOfBirth(self, DateOfBirth):
+        today = date.today()
+        age = (
+            today.year
+            - DateOfBirth.data.year
+            - ((today.month, today.day) < (DateOfBirth.data.month, DateOfBirth.data.day))
+        )
+        if age < 18:
+            raise ValidationError("You must be at least 18 years old to register.")
+

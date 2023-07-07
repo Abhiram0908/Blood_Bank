@@ -88,6 +88,13 @@ def account():
     )
 
 @app.route("/donor_register", methods=["GET", "POST"])
+@login_required
 def donor_register():
     form = RegisterAsDonorForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash("You are now registered as a donor", "sucess")
+        return redirect(url_for('home'))
     return render_template('donor_register.html', title = 'RegisterDonar', form=form)

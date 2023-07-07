@@ -5,231 +5,202 @@
 
 /* Global Styles */
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Nav bar */
-
 .topnav {
-    background-color: #ff5a5f;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-h2 {
-  text-align: center;
+  background-color: #ff5a5f;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: #ff5a5f;
-    margin-top: 30px;
-    /* Add margin-top to adjust the position */
-}
-
-.confidential-message {
-  color: #666;
-  font-size: 14px;
   text-align: center;
-  margin-bottom: 20px;
+  color: #ff5a5f;
+  margin-top: 30px; /* Add margin-top to adjust the position */
 }
 
 .form-wrapper {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 20px;
-}
-
-
-/* Styles for the register button */
-.form_submit {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 input[type="password"],
 input[type="email"],
-input[type="text"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
 select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
 input[type="submit"] {
-    background-color: #ff5a5f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.form_submit input[type="submit"]:hover {
-  background-color: #e2474d;
-}
-
-.remember-checkbox {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.required-field {
-  color: red;
-}
-
-
-.login-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.login-link input[type="submit"] {
-    background-color: transparent;
-    color: #ff5a5f;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: underline;
+.AgreeToTerms {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .error-message {
-    color: #e2474d;
-    font-size: 14px;
-    margin-top: 5px;
+  color: #e2474d;
+  font-size: 14px;
+  margin-top: 5px;
 }
-
-.field-description {
-  max-height: 3em; /* Set the desired height for the collapsed description */
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-
-/* Styles for the dropdown tooltip */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  z-index: 1;
-  width: 200px; /* Set initial width */
-  transition: width 0.3s; /* Add transition effect */
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  width: 750px; /* Set increased width on hover */
-}
-
 
 .flash-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .flash-messages {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .flash-message {
-    padding: 10px;
-    border-radius: 5px;
-    margin-right: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
 .flash-message.success {
-    background-color: #c2e0c6;
-    color: #145214;
+  background-color: #c2e0c6;
+  color: #145214;
 }
 
-.flash-message.error {
-    background-color: #e6b3b3;
-    color: #8c0e0e;
-}
-
+.flash-message.error,
 .flash-message.danger {
-    background-color: #e6b3b3;
-    color: #8c0e0e;
+  background-color: #e6b3b3;
+  color: #8c0e0e;
 }
+
+
+.form-field.dropdown {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-field.dropdown > label {
+  font-weight: bold;
+}
+
+.form-field.dropdown > label:after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  border: solid #ccc;
+  border-width: 0 1px 1px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.form-field.dropdown .dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.form-field.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+.form-field.dropdown .required-field {
+  color: red;
+  margin-left: 5px;
+}
+
+/* Additional styling for the dropdown content */
+.form-field.dropdown .dropdown-content p {
+  margin: 0;
+  padding: 5px 0;
+}
+
 
 @media only screen and (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
+  .container {
+    padding: 10px;
+  }
 
-    h1 {
-        font-size: 24px;
-    }
+  h1 {
+    font-size: 24px;
+  }
 
-    input[type="submit"] {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .login-link {
-        font-size: 14px;
-    }
+  input[type="submit"] {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
+  .container {
+    width: 90%;
+  }
 }

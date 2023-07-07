@@ -9,7 +9,9 @@
 </head>
 
 <body>
+
     <!-- Navigation -->
+
     <div class="topnav">
         <a href="{{ url_for('home') }}#home">Home</a>
         <a href="{{ url_for('home') }}#services">Services</a>
@@ -21,7 +23,7 @@
     </div>
 
     <div class="flash-container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}
         {% for category, message in messages %}
         <ul class="flash-messages">
@@ -38,96 +40,97 @@
         {% endwith %}
     </div>
 
+
     <div class="container">
+        <h1>Donar Registration Form</h1>
         <div class="form-wrapper">
-            <h1>Blood Donation Form</h1>
-            <p class="confidential-message">Confidential - Please answer the following questions correctly. This will
-                help to protect you and the patient who receives your blood.</p>
             <form method="POST" action="{{ url_for('donor_register') }}">
                 {{ form.hidden_tag() }}
-
-                <h2>Personal Details</h2>
                 <div class="form-group">
-                    <h3>{{ form.DonorName.label }}{% if form.DonorName.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.DonorName() }}
+                    <label for="DonorName">{{ form.DonorName.label }}</label><br>
+                    {{ form.DonorName() }}<br>
+                    {% for error in form.DonorName.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.DateOfBirth.label }}{% if form.DateOfBirth.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.DateOfBirth() }}
+                    <label for="DateOfBirth">{{ form.DateOfBirth.label }}</label><br>
+                    {{ form.DateOfBirth() }}<br>
+                    {% for error in form.DateOfBirth.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.BloodType.label }}{% if form.BloodType.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.BloodType() }}
+                    <label for="BloodType">{{ form.BloodType.label }}</label><br>
+                    {{ form.BloodType() }}<br>
+                    {% for error in form.BloodType.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.LastDonateDate.label }}{% if form.LastDonateDate.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.LastDonateDate() }}
+                    <label for="LastDonateDate">{{ form.LastDonateDate.label }}</label><br>
+                    {{ form.LastDonateDate(size=30) }}<br>
+                    {% for error in form.LastDonateDate.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
-                <h2>Contact</h2>
                 <div class="form-group">
-                    <h3>{{ form.PhoneNumber.label }}{% if form.PhoneNumber.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.PhoneNumber() }}
+                    <label for="PhoneNumber">{{ form.PhoneNumber.label }}</label><br>
+                    {{ form.PhoneNumber() }}<br>
+                    {% for error in form.PhoneNumber.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
+                <!-- <div class="form-group">
+                    <label for="email">{{ form.email.label }}</label><br>
+                    {{ form.email(size=30) }}<br>
+                    {% for error in form.email.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
+                </div> -->
                 <div class="form-group">
-                    <h3>{{ form.email.label }}{% if form.email.flags.required %}<span class="required-field">*</span>{%
-                        endif %}</h3>
-                    {{ form.email() }}
+                    <label for="StreetAddress">{{ form.StreetAddress.label }}</label><br>
+                    {{ form.StreetAddress() }}<br>
+                    {% for error in form.StreetAddress.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
-                <h2>Address</h2>
                 <div class="form-group">
-                    <h3>{{ form.StreetAddress.label }}{% if form.StreetAddress.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.StreetAddress() }}
+                    <label for="City">{{ form.City.label }}</label><br>
+                    {{ form.City(size=30) }}<br>
+                    {% for error in form.City.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.City.label }}{% if form.City.flags.required %}<span class="required-field">*</span>{%
-                        endif %}</h3>
-                    {{ form.City() }}
+                    <label for="State">{{ form.State.label }}</label><br>
+                    {{ form.State() }}<br>
+                    {% for error in form.State.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.State.label }}{% if form.State.flags.required %}<span class="required-field">*</span>{%
-                        endif %}</h3>
-                    {{ form.State() }}
+                    <label for="pin_code">{{ form.pin_code.label }}</label><br>
+                    {{ form.pin_code() }}<br>
+                    {% for error in form.pin_code.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
                 <div class="form-group">
-                    <h3>{{ form.country_code.label }}{% if form.country_code.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.country_code() }}
+                    <label for="Country">{{ form.Country.label }}</label><br>
+                    {{ form.Country() }}<br>
+                    {% for error in form.Country.errors %}
+                    <span class="error-message">{{ error }}</span><br>
+                    {% endfor %}
                 </div>
-
-                <div class="form-group">
-                    <h3>{{ form.Country.label }}{% if form.Country.flags.required %}<span
-                            class="required-field">*</span>{% endif %}</h3>
-                    {{ form.Country() }}
-                </div>
-
                 <div class="form-field dropdown">
                     {{ form.AgreeToTerms.label }}{% if form.AgreeToTerms.flags.required %}<span
                         class="required-field">*</span>{% endif %} {{ form.AgreeToTerms() }}
                     <span class="dropdown-content">{{ form.AgreeToTerms.description }}</span>
                 </div>
-
                 <div class="form-group">
-                    <div class="form_submit">
-                        {{ form.Submit() }}
-                    </div>
+                    {{ form.Submit() }}
                 </div>
-
-
             </form>
         </div>
     </div>

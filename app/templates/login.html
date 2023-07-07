@@ -23,26 +23,25 @@
         <a href="{{ url_for('home') }}#contact">Contact Us</a>
     </div>
 
-    <div class="flash-container">
-        {% with messages = get_flashed_messages(with_categories = true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-        <ul class="flash-messages">
-            {% for message in messages %}
-            {% if category == 'danger' %}
-            <li class="flash-message danger">{{ message }}</li>
-            {% else %}
-            <li class="flash-message success">{{ message }}</li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </div>
-
 
     <div class="container">
+        <div class="flash-container">
+            {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                {% if category == 'danger' %}
+                <li class="flash-message danger">{{ message }}</li>
+                {% else %}
+                <li class="flash-message success">{{ message }}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
         <div class="form-wrapper">
             <h1>Login</h1>
             <form method="POST" action="{{ url_for('login') }}">
