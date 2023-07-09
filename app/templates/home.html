@@ -26,6 +26,9 @@
     <a href="{{ url_for('home') }}#whyDonate">Why Donate Blood</a>
     <a href="{{ url_for('home') }}#videos">Videos</a>
     <a href="{{ url_for('home') }}#contact">Contact Us</a>
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('donor_data') }}">Donor Database</a>
+    {% endif %}
   </div>
 
 
