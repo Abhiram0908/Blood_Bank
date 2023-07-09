@@ -9,7 +9,7 @@ from wtforms import (
     BooleanField,
     DateField,
     SelectField,
-    IntegerField,
+    TextAreaField,
 )
 from wtforms.validators import (
     DataRequired,
@@ -17,7 +17,7 @@ from wtforms.validators import (
     Email,
     EqualTo,
     ValidationError,
-    Regexp
+    Regexp,
 )
 from app.models import User
 
@@ -152,15 +152,14 @@ class RegisterAsDonorForm(FlaskForm):
         "Phone Number",
         validators=[
             DataRequired(),
-            Length(min=10, max=15),
             Regexp(
-                r"^\+?[0-9]+$",
-                message="Invalid phone number format. Only digits and '+' are allowed.",
+                r"^\d{10}$",
+                message="Invalid phone number format. Please enter a 10-digit number.",
             ),
         ],
     )
-    email = StringField("Email", validators=[DataRequired(), Email()])
-    StreetAddress = StringField("Street Address", validators=[DataRequired()])
+    # email = StringField("Email", validators=[DataRequired(), Email()])
+    StreetAddress = TextAreaField("Street Address", validators=[DataRequired()])
     City = StringField("City ", validators=[DataRequired()])
     State = SelectField("State / Province", choices=states, validators=[DataRequired()])
     pin_code = StringField("PinCode", validators=[DataRequired()])
@@ -176,13 +175,32 @@ class RegisterAsDonorForm(FlaskForm):
     )
     Submit = SubmitField("Register")
 
+    def validate_BloodType(self, BloodType):
+        if BloodType.data == "":
+            raise ValidationError("Please select a valid blood type.")
+
     def validate_DateOfBirth(self, DateOfBirth):
         today = date.today()
         age = (
             today.year
             - DateOfBirth.data.year
-            - ((today.month, today.day) < (DateOfBirth.data.month, DateOfBirth.data.day))
+            - (
+                (today.month, today.day)
+                < (DateOfBirth.data.month, DateOfBirth.data.day)
+            )
         )
         if age < 18:
             raise ValidationError("You must be at least 18 years old to register.")
 
+    def validate_LastDonateDate(self, LastDonateDate):
+        today = date.today()
+        age1 = (
+            today.year
+            - LastDonateDate.data.year
+            - (
+                (today.month, today.day)
+                < (LastDonateDate.data.month, LastDonateDate.data.day)
+            )
+        )
+        if age1 < 0:
+            raise ValidationError("You must enter a date that is before today")

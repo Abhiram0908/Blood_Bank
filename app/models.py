@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default="default.jpg")
     password = db.Column(db.String(60), nullable=False)
-    donors = db.relationship('Donor', backref='Email', lazy=True)
+    donors = db.relationship("Donor", backref="Email", lazy=True)
 
     # How object is printed
     def __repr__(self):
@@ -34,8 +34,8 @@ class Donor(db.Model):
     State = db.Column(db.String(), nullable=False)
     pin_code = db.Column(db.String(), nullable=False)
     Country = db.Column(db.String(), nullable=False)
-    email_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    email_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
-# How object is printed
+    # How object is printed
     def __repr__(self):
-        return f"Donor('{self.DonorName}', '{self.BloodType}', '{self.PhoneNumber}')"
+        return f"Donor('{self.DonorName}', '{self.BloodType}', '{self.PhoneNumber}', '{self.DateOfBirth}', '{self.LastDonateDate}', '{self.StreetAddress}', '{self.City}', '{self.State}', '{self.pin_code}', '{self.Country}')"

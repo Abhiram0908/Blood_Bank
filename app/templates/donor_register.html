@@ -20,6 +20,7 @@
         <a href="{{ url_for('home') }}#whyDonate">Why Donate Blood</a>
         <a href="{{ url_for('home') }}#videos">Videos</a>
         <a href="{{ url_for('home') }}#contact">Contact Us</a>
+        <a href="{{ url_for('donor_data') }}">Donor Database</a>
     </div>
 
     <div class="flash-container">
@@ -42,83 +43,87 @@
 
 
     <div class="container">
-        <h1>Donar Registration Form</h1>
+        <h1>Donor Registration Form</h1>
         <div class="form-wrapper">
             <form method="POST" action="{{ url_for('donor_register') }}">
                 {{ form.hidden_tag() }}
                 <div class="form-group">
-                    <label for="DonorName">{{ form.DonorName.label }}</label><br>
-                    {{ form.DonorName() }}<br>
+                    <label for="DonorName">{{ form.DonorName.label }}{% if form.DonorName.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.DonorName(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.DonorName.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="DateOfBirth">{{ form.DateOfBirth.label }}</label><br>
-                    {{ form.DateOfBirth() }}<br>
+                    <label for="DateOfBirth">{{ form.DateOfBirth.label }}{% if form.DateOfBirth.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.DateOfBirth(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.DateOfBirth.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="BloodType">{{ form.BloodType.label }}</label><br>
-                    {{ form.BloodType() }}<br>
+                    <label for="BloodType">{{ form.BloodType.label }}{% if form.BloodType.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.BloodType(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.BloodType.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="LastDonateDate">{{ form.LastDonateDate.label }}</label><br>
-                    {{ form.LastDonateDate(size=30) }}<br>
+                    <label for="LastDonateDate">{{ form.LastDonateDate.label }}{% if form.LastDonateDate.flags.required
+                        %}<span class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.LastDonateDate(required_class="required-field", size=30) }}<br>
+                    <!-- Add required_class parameter -->
                     {% for error in form.LastDonateDate.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="PhoneNumber">{{ form.PhoneNumber.label }}</label><br>
-                    {{ form.PhoneNumber() }}<br>
+                    <label for="PhoneNumber">{{ form.PhoneNumber.label }}{% if form.PhoneNumber.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.PhoneNumber(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.PhoneNumber.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
-                <!-- <div class="form-group">
-                    <label for="email">{{ form.email.label }}</label><br>
-                    {{ form.email(size=30) }}<br>
-                    {% for error in form.email.errors %}
-                    <span class="error-message">{{ error }}</span><br>
-                    {% endfor %}
-                </div> -->
                 <div class="form-group">
-                    <label for="StreetAddress">{{ form.StreetAddress.label }}</label><br>
-                    {{ form.StreetAddress() }}<br>
+                    <label for="StreetAddress">{{ form.StreetAddress.label }}{% if form.StreetAddress.flags.required
+                        %}<span class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.StreetAddress(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.StreetAddress.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="City">{{ form.City.label }}</label><br>
-                    {{ form.City(size=30) }}<br>
+                    <label for="City">{{ form.City.label }}{% if form.City.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.City(required_class="required-field", size=30) }}<br> <!-- Add required_class parameter -->
                     {% for error in form.City.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="State">{{ form.State.label }}</label><br>
-                    {{ form.State() }}<br>
+                    <label for="State">{{ form.State.label }}{% if form.State.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.State(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.State.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="pin_code">{{ form.pin_code.label }}</label><br>
-                    {{ form.pin_code() }}<br>
+                    <label for="pin_code">{{ form.pin_code.label }}{% if form.pin_code.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.pin_code(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.pin_code.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
                 </div>
                 <div class="form-group">
-                    <label for="Country">{{ form.Country.label }}</label><br>
-                    {{ form.Country() }}<br>
+                    <label for="Country">{{ form.Country.label }}{% if form.Country.flags.required %}<span
+                            class="required-field">*</span>{% endif %}</label><br>
+                    {{ form.Country(required_class="required-field") }}<br> <!-- Add required_class parameter -->
                     {% for error in form.Country.errors %}
                     <span class="error-message">{{ error }}</span><br>
                     {% endfor %}
@@ -128,7 +133,7 @@
                         class="required-field">*</span>{% endif %} {{ form.AgreeToTerms() }}
                     <span class="dropdown-content">{{ form.AgreeToTerms.description }}</span>
                 </div>
-                <div class="form-group">
+                <div class="form-submit">
                     {{ form.Submit() }}
                 </div>
             </form>
