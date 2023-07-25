@@ -1,5 +1,7 @@
 import secrets, os
 from flask import render_template, url_for, flash, redirect, request
+from sqlalchemy import or_
+from sqlalchemy.orm import aliased
 from app import app, db, bcrypt
 from app.forms import (
     RegistrationForm,
@@ -125,4 +127,24 @@ def donor_register():
 @login_required
 def donor_data():
     donor = Donor.query.all()
+    return render_template("donor_data.html", title="Donor_Data", donor=donor)
+
+@app.route("/donor/registration/Donor_data", methods=["POST"])
+@login_required
+def search_donor_data():
+    search_input = request.form.get("search_input").strip().upper()
+
+    if search_input:
+        # Filter the donors based on the search input (allowing partial matches)
+        donor = []
+        for d in Donor.query.all():
+            if search_input == d.BloodType.upper() or \
+               search_input in d.City.upper() or \
+               search_input in d.State.upper() or \
+               search_input in d.pin_code.upper():
+                donor.append(d)
+
+    else:
+        donor = Donor.query.all()
+
     return render_template("donor_data.html", title="Donor_Data", donor=donor)

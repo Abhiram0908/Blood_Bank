@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/donor_data.css">
     <title>Donor_Data</title>
+
 </head>
 
 <body>
@@ -43,7 +44,12 @@
 
     <div class="container">
         <h1>Donor Database</h1>
-        <table>
+        <form method="post" action="{{ url_for('search_donor_data') }}">
+            <input type="text" name="search_input" placeholder="Search for donor names..">
+            <button type="submit">Search</button>
+        </form>
+
+        <table id="donorTable">
             <thead>
                 <tr>
                     <th>Donor Name</th>
