@@ -36,6 +36,16 @@ body {
   color: black;
 }
 
+.topnav a.split {
+  float: right;
+  color: white;
+}
+
+.topnav a.split:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;

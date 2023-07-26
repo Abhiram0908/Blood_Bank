@@ -21,7 +21,8 @@
         <a href="{{ url_for('home') }}#whyDonate">Why Donate Blood</a>
         <a href="{{ url_for('home') }}#videos">Videos</a>
         <a href="{{ url_for('home') }}#contact">Contact Us</a>
-        <a href="{{ url_for('donor_register') }}">Register as Donor</a>
+        <a href="{{url_for('logout')}}" class="split">Logout</a>
+        <a href="{{ url_for('donor_register') }}" class="split">Register as Donor</a>
     </div>
 
     <div class="flash-container">
@@ -44,10 +45,13 @@
 
     <div class="container">
         <h1>Donor Database</h1>
-        <form method="post" action="{{ url_for('search_donor_data') }}">
-            <input type="text" name="search_input" placeholder="Search for donor names..">
-            <button type="submit">Search</button>
-        </form>
+
+        <div class="search-bar">
+            <form method="post" action="{{ url_for('search_donor_data') }}">
+                <input type="text" name="search_input" placeholder="Search for donors by blood type, city, state or pincode">
+                <button type="submit">Search</button>
+            </form>
+        </div>
 
         <table id="donorTable">
             <thead>

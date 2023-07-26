@@ -20,7 +20,9 @@
         <a href="{{ url_for('home') }}#whyDonate">Why Donate Blood</a>
         <a href="{{ url_for('home') }}#videos">Videos</a>
         <a href="{{ url_for('home') }}#contact">Contact Us</a>
-        <a href="{{ url_for('donor_data') }}">Donor Database</a>
+        <a href="{{url_for('logout')}}" class="split">Logout</a>
+        <a href="{{ url_for('donor_data') }}" class="split">Donor Database</a>
+
     </div>
 
     <div class="flash-container">

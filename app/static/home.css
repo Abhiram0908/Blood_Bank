@@ -91,6 +91,16 @@ body {
   color: black;
 }
 
+.topnav a.split {
+  float: right;
+  color: white;
+}
+
+.topnav a.split:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 /* Home Section Styles */
 #home {
   background-image: url("/static/images/home-background.jpg");
